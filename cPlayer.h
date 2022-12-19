@@ -3,8 +3,10 @@
 class cPlayer :
     public cGameChar
 {
+	uint8 inputFlags;
+	void Input();
 public:
-	cPlayer(Vec2 _pos):cGameChar(_pos)
+	cPlayer(Vec2 _pos):cGameChar(_pos),inputFlags(0)
 	{
 		position_ = Vec2(200, 200);
 	}
