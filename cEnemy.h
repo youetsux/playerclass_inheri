@@ -17,7 +17,7 @@ public:
 	cEnemy(Vec2 _pos)
 		:cGameChar(_pos)
 	{
-		radius_ = 20.0;
+		radius_ = 25.0;
 		direction_ = Vec2(1, 0);
 		position_ = Vec2(100, 100);
 		speed_ = 2.0; //とりあえずスピード2.0 pix/frameで動くことにする

@@ -43,8 +43,8 @@ void cPlayer::Update()
 	std::map<uint8, double> dVec = { {0, 0}, {1, 90}, { 2,-90 }, { 4,180 },
 								   { 5,135 },{6,-135}, { 8, 0 },{ 9,45 },{10,-45} };
 	dirVec_ = { 1, 0 };
-	rot_ = dVec[inputFlags];
-	SetAffineMatrixDegrees(rot_);
+	
+	SetAffineMatrixDegrees(rot_ = dVec[inputFlags]);
 	dirVec_ = afn_.transformPoint(dirVec_);
 	position_ = position_ + (inputFlags > 0) * speed_ * dirVec_;
 }

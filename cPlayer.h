@@ -18,7 +18,7 @@ public:
 	{
 		dirVec_ = { 1.0, 0 };
 		speed_ = 2.0;
-		radius_ = 20.0;
+		radius_ = 25.0;
 		position_ = Vec2(200, 200);
 		afn_ = Mat2x2::Identity();
 	}
