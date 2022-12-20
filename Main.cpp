@@ -9,22 +9,36 @@ void Main()
 	// 通常のフォントを作成 | Create a new font
 	const Font font{ 60 };
 
-	cEnemy* pEnemy = new cEnemy(Vec2(0,0));
-	cPlayer* pPlayer = new cPlayer(Vec2(0, 0));
-	cGameChar* OBJS[2];
-	OBJS[0] = pEnemy;
-	OBJS[1] = pPlayer;
-	
+	//cEnemy* pEnemy = new cEnemy(Vec2(0,0));
+	//cPlayer* pPlayer = new cPlayer(Vec2(0, 0));
+
+	//cGameChar* OBJS[2];
+	//OBJS[0] = pEnemy;
+	//OBJS[1] = pPlayer;
+	// こいつらは可変長配列を使って以下のように書き換えられます。
+	std::vector<cGameChar*> g_objs;
+	g_objs.emplace_back(new cEnemy(Vec2(0, 0)));
+	g_objs.emplace_back(new cPlayer(Vec2(0, 0)));
+
+
 	//Size s = Scene::Size(); s.x s.y でウィンドウの幅と高さがとれるよ
 	while (System::Update())
 	{
-		for (int i = 0; i < 2; i++)
+		//for (int i = 0; i < 2; i++)
+		//{
+		//	OBJS[i]->Update();
+		//}
+		//for (int i = 0; i < 2; i++)
+		//{
+		//	OBJS[i]->Draw();
+		//}
+		for (auto& i : g_objs)
 		{
-			OBJS[i]->Update();
+			i->Update();
 		}
-		for (int i = 0; i < 2; i++)
+		for (auto& i : g_objs)
 		{
-			OBJS[i]->Draw();
+			i->Draw();
 		}
 		//pEnemy->Update();
 		//pPlayer->Update();

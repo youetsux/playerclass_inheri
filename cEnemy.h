@@ -12,7 +12,7 @@ class cEnemy :
 	//各ベクトルと回転角からそのフレームの変換行列を求める
 	void SetAffineMatrixRadians(double _angle_rad);
 	void SetAffineMatrixDegrees(double _angle_deg);
-	void SetMirrorTransformMatrix();
+	//void SetMirrorTransformMatrix();
 public:
 	cEnemy(Vec2 _pos)
 		:cGameChar(_pos)
